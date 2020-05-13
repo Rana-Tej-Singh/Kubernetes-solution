@@ -1,0 +1,10 @@
+kind: Pod       # Resource type
+apiVersion: v1          # Version of api
+metadata:
+  name: podspec    # Pod name
+spec:
+    containers:
+     - image: nginx    # Docker image
+       name: pod1      # Container name
+       ports:
+        - containerPort: 80        # container port, as we write in Dockerfile 'Expose 80'
