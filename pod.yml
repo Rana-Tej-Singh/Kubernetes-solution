@@ -1,7 +1,9 @@
 kind: Pod       # Resource type
 apiVersion: v1          # Version of api
 metadata:
-  name: podspec    # Pod name
+  name: podspec      # Pod name
+  labels:
+     app: webapp
 spec:
     containers:
      - image: nginx    # Docker image
