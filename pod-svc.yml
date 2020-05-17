@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+   name: svc-pod
+spec:
+   type: NodePort          # service type   NodePort --> to access application from outside world.
+   ports:
+   - name: my-svc                # Port section name, this is optional
+     port: 80                    # Service port
+     targetPort: 80              # Pod port
+     nodePort: 32000             # Node port
+     protocol: TCP               # This section is optional, TCP/UDP
+   selector:
+      app: webapp
