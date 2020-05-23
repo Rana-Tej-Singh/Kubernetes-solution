@@ -1,0 +1,23 @@
+kind: Pod
+metadata:
+    name: pod1
+    labels:
+      app: stable
+apiVersion: v1
+spec:
+   containers:
+       - image: nginx
+         name: pod1
+         args:
+           - /bin/sh
+           - -c
+           - echo $hostname >/usr/share/nginx/html/index.html
+         volumeMounts:
+            - name: webapp
+              mountPath: /usr/share/nginx/html/
+   nodeName: node01           # this pod will be schedule on node01.
+   volumes:
+     - name: webapp
+       hostPath:
+         path: /node
+         type: DirectoryOrCreate     # if directory is not available then it will be create.
