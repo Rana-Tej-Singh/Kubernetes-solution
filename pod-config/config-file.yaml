@@ -1,0 +1,7 @@
+apiVersion: v1
+metadata:
+   name: web-config
+kind: ConfigMap
+data:
+   HOST_NAME: master
+   
