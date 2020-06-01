@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: web-app
+data:
+   HOST_NAME: k8s
+   HOST_PORT: 8080
